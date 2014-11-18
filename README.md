@@ -23,10 +23,12 @@ A Style Guide for writing clean and readable CJSX
 
   # Good
   <MightyComponent className="awesome-class"
-    items={items}
-    anotherProperty={wayTooLong}
-    andAnother={wayTooLong} />
+                   items={items}
+                   anotherProperty={wayTooLong}
+                   andAnother={wayTooLong} />
   ```
+
+  **NOTE**: When an element spans over multiple lines, the tags should all be aligned horizontally, like they are in the last example.
 
 ## Complex renders
 * <a name="prefix-with-render"></a>
