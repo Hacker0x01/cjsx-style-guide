@@ -46,7 +46,7 @@ render: ->
   </div>
 
 # Bad
-MightyComponent: ->
+mightyComponent: ->
   if @state.showMightyComponent
     <MightyComponent>
       Very important
@@ -54,6 +54,6 @@ MightyComponent: ->
 
 render: ->
   <div>
-    {@MightyComponent()}
+    {@mightyComponent()}
   </div>
 ```
