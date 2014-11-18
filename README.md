@@ -28,7 +28,6 @@ A Style Guide for writing clean and readable CJSX
   ```
 
 ## Complex renders
-### Splitting it up
 * <a name="prefix-with-render"></a>
   Prefex render helpers with `render`. 
 <sup>[[link](#prefix-with-render)]</sup>
