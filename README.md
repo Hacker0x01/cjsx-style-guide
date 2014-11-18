@@ -10,7 +10,7 @@ A Style Guide for writing clean and readable CJSX
 
 * <a name="one-line"></a>
   Elements can span on one line as long as they fit. 
-<sup>[[link](#one-line)</sup>
+<sup>[[link](#one-line)]</sup>
   
   ```JSX
   # Good
