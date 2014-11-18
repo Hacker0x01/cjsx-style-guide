@@ -33,22 +33,27 @@ Prefex render helpers with `render`.
 Put the logic to show or not call the helper in the main `render` fuction.
 
 This makes it easier see what the render method does and makes sure the render helpers have a single responsibility.
-```
+```Coffee
+# Good
 renderTooltip: ->
-  <ReactPopover placement="right">
+  <MightyComponent>
     Very important
-  </ReactPopover>
-
-renderReferenceUrl: ->
-  <a className="external-reference-create"
-    href={@createReferenceUrl()}
-    target="_blank">
-    Escalate
-  </a>
+  </MightyComponent>
 
 render: ->
   <div>
-    {@renderTooltip() if @state.showTooltip}
-    {@renderReferenceUrl() if @createReferenceUrl()}
+    {@renderMightyComponent() if @state.showMightyComponent}
+  </div>
+
+# Bad
+MightyComponent: ->
+  if @state.showMightyComponent
+    <MightyComponent>
+      Very important
+    </MightyComponent>
+
+render: ->
+  <div>
+    {@MightyComponent()}
   </div>
 ```
