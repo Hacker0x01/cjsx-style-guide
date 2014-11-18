@@ -70,9 +70,7 @@ A Style Guide for writing clean and readable CJSX
   # Bad
   renderMightyComponent: ->
     if @state.showMightyComponent
-      <MightyComponent>
-        Very important
-      </MightyComponent>
+      <MightyComponent>Very important</MightyComponent>
 
   render: ->
     <div>
