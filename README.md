@@ -77,6 +77,31 @@ A Style Guide for writing clean and readable CJSX
       {@renderMightyComponent()}
     </div>
   ```
+  
+* <a name="use-classset"></a>
+  Use `React.addons.classSet` when dealing with toggling multiple classes.
+<sup>[[link](#use-classet)]</sup>
+
+  ```Coffee
+  # Good
+  render: ->
+    input_classes = React.addons.classSet
+      'active': @props.isActive
+      'pull-left': true
+      'spec-input': true
+    
+    <input className={input_classes} />
+    
+  # Bad
+  render: ->
+    input_classes = [
+      'active' if @props.isActive
+      'pull-left'
+      'spec-input'
+    ].join(' ')
+    
+    <input className={input_classes} />
+  ```
 
 ## Significant whitespace
 CJSX handles significant whitespace differently then HTML, there is a nice discussion about this here: https://github.com/facebook/react/pull/480 (about JSX but applies to cjsx).
