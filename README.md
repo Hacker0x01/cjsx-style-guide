@@ -5,6 +5,7 @@ A Style Guide for writing clean and readable CJSX
 
 ## Table of Contents
 * [Source Code Layout](#source-code-layout)
+* [Multiple renders](#multiple-renders)
 
 ## Source Code Layout
 
@@ -25,3 +26,25 @@ A Style Guide for writing clean and readable CJSX
     anotherProperty={wayTooLong}
     andAnother={wayTooLong} />
   ```
+
+## Complex renders
+### Splitting it up
+```
+renderTooltip: ->
+  <ReactPopover placement="right">
+    Very important
+  </ReactPopover>
+
+renderReferenceUrl: ->
+  <a className="external-reference-create"
+    href={@createReferenceUrl()}
+    target="_blank">
+    Escalate
+  </a>
+
+render: ->
+  <div>
+    {@renderTooltip if @state.showTooltip}
+    {@renderReferenceUrl() if @createReferenceUrl()}
+  </div>
+```
