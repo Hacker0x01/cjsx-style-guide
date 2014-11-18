@@ -35,7 +35,7 @@ Put the logic to show or not call the helper in the main `render` fuction.
 This makes it easier see what the render method does and makes sure the render helpers have a single responsibility.
 ```Coffee
 # Good
-renderTooltip: ->
+renderMightyComponent: ->
   <MightyComponent>
     Very important
   </MightyComponent>
