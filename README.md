@@ -5,7 +5,7 @@ A Style Guide for writing clean and readable CJSX
 
 ## Table of Contents
 * [Source Code Layout](#source-code-layout)
-* [Complex renders](#multiple-renders)
+* [Complex renders](#complex-renders)
 
 ## Source Code Layout
 
