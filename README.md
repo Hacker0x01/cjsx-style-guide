@@ -11,26 +11,28 @@ A Style Guide for writing clean and readable CJSX
 ## Source Code Layout
 
 * <a name="one-line"></a>
-  Elements can span on one line as long as they fit. 
+  Elements can span on one line as long as they fit.
 <sup>[[link](#one-line)]</sup>
-  
+
   ```Coffee
   # Good
   <MightyComponent className="awesome-class" items={items} />
-  
+
   # Bad
   <MightyComponent className="awesome-class" items={items} anotherProperty={wayTooLong} andAnother={wayTooLong} />
-  
+
   # Good
   <MightyComponent className="awesome-class"
-    items={items}
-    anotherProperty={wayTooLong}
-    andAnother={wayTooLong} />
+                   items={items}
+                   anotherProperty={wayTooLong}
+                   andAnother={wayTooLong} />
   ```
+
+  **NOTE**: When an element spans over multiple lines, the tags should all be aligned horizontally, like they are in the last example.
 
 ## Complex renders
 * <a name="prefix-with-render"></a>
-  Prefex render helpers with `render`. 
+  Prefex render helpers with `render`.
 <sup>[[link](#prefix-with-render)]</sup>
 
   ```Coffee
@@ -77,7 +79,7 @@ A Style Guide for writing clean and readable CJSX
       {@renderMightyComponent()}
     </div>
   ```
-  
+
 * <a name="use-classset"></a>
   Use `React.addons.classSet` when dealing with toggling multiple classes.
 <sup>[[link](#use-classset)]</sup>
@@ -89,9 +91,9 @@ A Style Guide for writing clean and readable CJSX
       'active': @props.isActive
       'pull-left': true
       'spec-input': true
-    
+
     <input className={input_classes} />
-    
+
   # Bad
   render: ->
     input_classes = [
@@ -99,7 +101,7 @@ A Style Guide for writing clean and readable CJSX
       'pull-left'
       'spec-input'
     ].join(' ')
-    
+
     <input className={input_classes} />
   ```
 
@@ -131,7 +133,7 @@ CJSX handles significant whitespace differently then HTML, there is a nice discu
       This is a
       {SPACE}<a href="/link">link</a>.
     </div>
-  
+
   # Bad
   render: ->
     # renders 'This is a link.'
