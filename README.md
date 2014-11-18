@@ -29,6 +29,10 @@ A Style Guide for writing clean and readable CJSX
 
 ## Complex renders
 ### Splitting it up
+Prefex render helpers with `render`.
+Put the logic to show or not call the helper in the main `render` fuction.
+
+This makes it easier see what the render method does and makes sure the render helpers have a single responsibility.
 ```
 renderTooltip: ->
   <ReactPopover placement="right">
@@ -44,7 +48,7 @@ renderReferenceUrl: ->
 
 render: ->
   <div>
-    {@renderTooltip if @state.showTooltip}
+    {@renderTooltip() if @state.showTooltip}
     {@renderReferenceUrl() if @createReferenceUrl()}
   </div>
 ```
