@@ -78,12 +78,22 @@ A Style Guide for writing clean and readable CJSX
     </div>
   ```
 
-* <a name="use-classset"></a>
-  Use `React.addons.classSet` when dealing with toggling multiple classes.
-<sup>[[link](#use-classset)]</sup>
+* <a name="use-array-for-classes"></a>
+  Use array's to deal with toggling multiple classes.
+<sup>[[link](#use-array-for-classes)]</sup>
 
   ```Coffee
   # Good
+  render: ->
+    input_classes = [
+      'active' if @props.isActive
+      'pull-left'
+      'spec-input'
+    ].join(' ')
+
+    <input className={input_classes} />
+
+  # Bad
   render: ->
     input_classes = React.addons.classSet
       'active': @props.isActive
@@ -94,13 +104,7 @@ A Style Guide for writing clean and readable CJSX
 
   # Bad
   render: ->
-    input_classes = [
-      'active' if @props.isActive
-      'pull-left'
-      'spec-input'
-    ].join(' ')
-
-    <input className={input_classes} />
+    <input className="#{active if @state.isActive} pull-left spec-input" />
   ```
 
 ## Significant whitespace
