@@ -12,7 +12,7 @@ A Style Guide for writing clean and readable CJSX
   Elements can span on one line as long as they fit. 
 <sup>[[link](#one-line)]</sup>
   
-  ```JSX
+  ```Coffee
   # Good
   <MightyComponent className="awesome-class" items={items} />
   
