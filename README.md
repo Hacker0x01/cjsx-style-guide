@@ -80,7 +80,7 @@ A Style Guide for writing clean and readable CJSX
   
 * <a name="use-classset"></a>
   Use `React.addons.classSet` when dealing with toggling multiple classes.
-<sup>[[link](#use-classet)]</sup>
+<sup>[[link](#use-classset)]</sup>
 
   ```Coffee
   # Good
