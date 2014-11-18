@@ -40,7 +40,7 @@ A Style Guide for writing clean and readable CJSX
 
   render: ->
     <div>
-      {@renderMightyComponent() if @state.showMightyComponent}
+      {@renderMightyComponent()}
     </div>
 
   # Bad
@@ -49,7 +49,7 @@ A Style Guide for writing clean and readable CJSX
 
   render: ->
     <div>
-      {@mightyComponent() if @state.showMightyComponent}
+      {@mightyComponent()}
     </div>
 ```
 
@@ -77,3 +77,40 @@ A Style Guide for writing clean and readable CJSX
       {@renderMightyComponent()}
     </div>
   ```
+## Significant whitespace
+CJSX handles significant whitespace differently then HTML, there is a nice discussion about this here: https://github.com/facebook/react/pull/480 (about JSX but applies to cjsx).
+
+  ```Coffee
+  # Bad
+  render: ->
+    # renders 'This is alink.'
+    <div>
+      This is a
+      <a href="/link">link</a>.
+    </div>
+
+  # Bad (alternative)
+  window.SPACE = ' '
+  render: ->
+    # renders 'This is a link.'
+    <div>
+      This is a
+      {SPACE}<a href="/link">link</a>.
+    </div>
+  
+  # Bad
+  render: ->
+    # renders 'This is a link.'
+    <div>
+      This is a
+      &#32;<a href="/link">link</a>.
+    </div>
+
+  # Good
+  render: ->
+    # renders 'This is a link.'
+    <div>
+      This is a
+      {' '}<a href="/link">link</a>.
+    </div>
+   ```
