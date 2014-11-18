@@ -29,31 +29,53 @@ A Style Guide for writing clean and readable CJSX
 
 ## Complex renders
 ### Splitting it up
-Prefex render helpers with `render`.
-Put the logic to show or not call the helper in the main `render` fuction.
+* <a name="prefix-with-render"></a>
+  Prefex render helpers with `render`. 
+<sup>[[link](#prefix-with-render)]</sup>
 
-This makes it easier see what the render method does and makes sure the render helpers have a single responsibility.
-```Coffee
-# Good
-renderMightyComponent: ->
-  <MightyComponent>
-    Very important
-  </MightyComponent>
+  ```Coffee
+  # Good
+  renderMightyComponent: ->
+    <MightyComponent>Very important</MightyComponent>
 
-render: ->
-  <div>
-    {@renderMightyComponent() if @state.showMightyComponent}
-  </div>
+  render: ->
+    <div>
+      {@renderMightyComponent() if @state.showMightyComponent}
+    </div>
 
-# Bad
-mightyComponent: ->
-  if @state.showMightyComponent
-    <MightyComponent>
-      Very important
-    </MightyComponent>
+  # Bad
+  mightyComponent: ->
+    <MightyComponent>Very important</MightyComponent>
 
-render: ->
-  <div>
-    {@mightyComponent()}
-  </div>
+  render: ->
+    <div>
+      {@mightyComponent() if @state.showMightyComponent}
+    </div>
 ```
+
+* <a name="put-show-logic-in-render"></a>
+  Put the logic to show or not call the helper in the main `render` fuction. This makes it easier see what the render method does and makes sure the render helpers have a single responsibility.
+<sup>[[link](#put-show-logic-in-render)]</sup>
+
+  ```Coffee
+  # Good
+  renderMightyComponent: ->
+    <MightyComponent>Very important</MightyComponent>
+
+  render: ->
+    <div>
+      {@renderMightyComponent() if @state.showMightyComponent}
+    </div>
+
+  # Bad
+  renderMightyComponent: ->
+    if @state.showMightyComponent
+      <MightyComponent>
+        Very important
+      </MightyComponent>
+
+  render: ->
+    <div>
+      {@renderMightyComponent()}
+    </div>
+  ```
