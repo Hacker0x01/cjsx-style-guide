@@ -6,6 +6,7 @@ A Style Guide for writing clean and readable CJSX
 ## Table of Contents
 * [Source Code Layout](#source-code-layout)
 * [Complex renders](#complex-renders)
+* [Significant whitespace](#significant-whitespace)
 
 ## Source Code Layout
 
@@ -76,6 +77,7 @@ A Style Guide for writing clean and readable CJSX
       {@renderMightyComponent()}
     </div>
   ```
+
 ## Significant whitespace
 CJSX handles significant whitespace differently then HTML, there is a nice discussion about this here: https://github.com/facebook/react/pull/480 (about JSX but applies to cjsx).
 
