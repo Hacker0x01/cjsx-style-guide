@@ -146,3 +146,19 @@ CJSX handles significant whitespace differently then HTML, there is a nice discu
       &#32;<a href="/link">link</a>.
     </div>
    ```
+
+## Don't inline methods
+Define methods on the component instead of inlining them.
+
+  ```Coffee
+  # Good
+  handleClick: ->
+    # implementation
+    
+  render: ->
+    <a onClick={@handleClick} />
+  
+  # Bad
+  render: ->
+    <a onClick={=> #implementation} />
+   ```
