@@ -81,7 +81,7 @@ A Style Guide for writing clean and readable CJSX
   ```
 
 * <a name="use-array-for-classes"></a>
-  Use array's to deal with toggling multiple classes.
+  Use arrays to deal with toggling multiple classes.
 <sup>[[link](#use-array-for-classes)]</sup>
 
   ```Coffee
