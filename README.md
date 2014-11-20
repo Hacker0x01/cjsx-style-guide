@@ -7,6 +7,7 @@ A Style Guide for writing clean and readable CJSX
 * [Source Code Layout](#source-code-layout)
 * [Complex renders](#complex-renders)
 * [Significant whitespace](#significant-whitespace)
+* [Don't inline methods](#don-t-inline-methods)
 
 ## Source Code Layout
 
