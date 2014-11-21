@@ -162,4 +162,22 @@ Define methods on the component instead of inlining them.
   # Bad
   render: ->
     <a onClick={=> #implementation} />
-   ```
+```
+
+Advanced usage, methods with arguments: Since Coffeescript will call the method on render when a argument is passed, the handler method should return the actual method to be called. Use the `-> =>` for this.
+```
+ # Good
+  handleClick: (button_name) -> =>
+    @setState lastButtonClicked: button_name
+
+  render: ->
+    <a onClick={@handleClick('first')} />
+    <a onClick={@handleClick('second')} />
+  
+  # Bad
+  handleClick: (button_name) =>
+    @setState lastButtonClicked: button_name
+  
+  render: ->
+  
+```
