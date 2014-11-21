@@ -61,17 +61,19 @@ A Style Guide for writing clean and readable CJSX
 ```
 
 * <a name="put-show-logic-in-render"></a>
-  Put the logic to show or not call the helper in the main `render` fuction. This makes it easier see what the render method does and makes sure the render helpers have a single responsibility.
+  Do not put the logic to show or not call the helper in the main `render` fuction. This introduces cyclomatic complexity and is more difficult to read when having multipe if/unless statements – use guards instead.
 <sup>[[link](#put-show-logic-in-render)]</sup>
 
   ```Coffee
   # Good
   renderMightyComponent: ->
+    return null unless @state.showMightyComponent
+
     <MightyComponent>Very important</MightyComponent>
 
   render: ->
     <div>
-      {@renderMightyComponent() if @state.showMightyComponent}
+      {@renderMightyComponent()}
     </div>
 
   # Bad
@@ -82,6 +84,15 @@ A Style Guide for writing clean and readable CJSX
   render: ->
     <div>
       {@renderMightyComponent()}
+    </div>
+
+  # Bad
+  renderMightyComponent: ->
+    <MightyComponent>Very important</MightyComponent>
+
+  render: ->
+    <div>
+      {@renderMightyComponent() if @state.showMightyComponent}
     </div>
   ```
 
