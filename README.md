@@ -179,5 +179,6 @@ Advanced usage, methods with arguments: Since Coffeescript will call the method 
     @setState lastButtonClicked: button_name
   
   render: ->
-  
+    <a onClick={=> @handleClick('first')} />
+    <a onClick={=> @handleClick('second')} />
 ```
