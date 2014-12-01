@@ -22,10 +22,11 @@ A Style Guide for writing clean and readable CJSX
   <MightyComponent className="awesome-class" items={items} anotherProperty={wayTooLong} andAnother={wayTooLong} />
 
   # Good
-  <MightyComponent className="awesome-class"
-                   items={items}
-                   anotherProperty={wayTooLong}
-                   andAnother={wayTooLong} />
+  <MightyComponent 
+      className="awesome-class"
+      items={items}
+      anotherProperty={wayTooLong}
+      andAnother={wayTooLong} />
   
   # Bad  
   <MightyComponent className="awesome-class" 
