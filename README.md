@@ -32,6 +32,12 @@ A Style Guide for writing clean and readable CJSX
   <MightyComponent className="awesome-class" 
                    items={items} 
   />
+  
+  # Bad  
+  <MightyComponent 
+      className="awesome-class" 
+      items={items} 
+  />
   ```
 
   **NOTE**: When an element spans over multiple lines, the tags should all be aligned horizontally, like they are in the last example.
