@@ -18,10 +18,17 @@ A Style Guide for writing clean and readable CJSX
   # Good
   <MightyComponent className="awesome-class" items={items} />
 
+  # Good
+  <MightyComponent 
+      className="awesome-class"
+      items={items}
+      anotherProperty={wayTooLong}
+      andAnother={wayTooLong} />
+
   # Bad
   <MightyComponent className="awesome-class" items={items} anotherProperty={wayTooLong} andAnother={wayTooLong} />
-
-  # Good
+  
+  # Bad
   <MightyComponent className="awesome-class"
                    items={items}
                    anotherProperty={wayTooLong}
@@ -30,6 +37,12 @@ A Style Guide for writing clean and readable CJSX
   # Bad  
   <MightyComponent className="awesome-class" 
                    items={items} 
+  />
+  
+  # Bad  
+  <MightyComponent 
+      className="awesome-class" 
+      items={items} 
   />
   ```
 
