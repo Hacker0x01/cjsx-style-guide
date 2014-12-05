@@ -147,15 +147,26 @@ CJSX handles significant whitespace differently then HTML, there is a nice discu
   render: ->
     # renders 'This is a link.'
     <div>
-      This is a
+      <em>This</em>
+      {' '}is a{' '}
+      <a href="/link">link</a>.
+    </div>
+
+  # Bad
+  render: ->
+    # renders 'This is a link.'
+    <div>
+      <em>This</em>{' '}
+      is a
       {' '}<a href="/link">link</a>.
     </div>
 
   # Bad
   render: ->
-    # renders 'This is alink.'
+    # renders 'Thisis alink.'
     <div>
-      This is a
+      <em>This</em>
+      is a
       <a href="/link">link</a>.
     </div>
 
@@ -164,16 +175,18 @@ CJSX handles significant whitespace differently then HTML, there is a nice discu
   render: ->
     # renders 'This is a link.'
     <div>
-      This is a
-      {SPACE}<a href="/link">link</a>.
+      <em>This</em>
+      {SPACE}is a{SPACE}
+      <a href="/link">link</a>.
     </div>
 
   # Bad
   render: ->
     # renders 'This is a link.'
     <div>
-      This is a
-      &#32;<a href="/link">link</a>.
+      <em>This</em>
+      &#32;is a&#32;
+      <a href="/link">link</a>.
     </div>
    ```
 
