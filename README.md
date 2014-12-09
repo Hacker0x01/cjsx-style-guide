@@ -8,6 +8,7 @@ A Style Guide for writing clean and readable CJSX
 * [Complex renders](#complex-renders)
 * [Significant whitespace](#significant-whitespace)
 * [Don't inline methods](#dont-inline-methods)
+* [Usage of quotes in CJSX elements](#usage-of-quotes-in-cjsx-elements)
 
 ## Source Code Layout
 
@@ -207,7 +208,7 @@ Define methods on the component instead of inlining them.
 ```
 
 Advanced usage, methods with arguments: Since Coffeescript will call the method on render when a argument is passed, the handler method should return the actual method to be called. Use the `-> =>` for this.
-```
+```Coffee
  # Good
   handleClick: (button_name) -> =>
     @setState lastButtonClicked: button_name
@@ -224,3 +225,17 @@ Advanced usage, methods with arguments: Since Coffeescript will call the method 
     <a onClick={-> @handleClick('first')} />
     <a onClick={-> @handleClick('second')} />
 ```
+## Usage of quotes in CJSX elements
+Use double quotes instead of single quotes when writing CJSX elements:
+
+  ```Coffee
+  # Good
+  render: ->
+    <a className="link" href="/page" />
+  
+  # Bad
+  render: ->
+    <a className='link' href='/page' />
+```
+
+It's fine to use single quotes on non-CJSX elements
