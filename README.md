@@ -207,7 +207,7 @@ Define methods on the component instead of inlining them.
 ```
 
 Advanced usage, methods with arguments: Since Coffeescript will call the method on render when a argument is passed, the handler method should return the actual method to be called. Use the `-> =>` for this.
-```
+```Coffee
  # Good
   handleClick: (button_name) -> =>
     @setState lastButtonClicked: button_name
