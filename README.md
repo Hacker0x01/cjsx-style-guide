@@ -21,30 +21,49 @@ A Style Guide for writing clean and readable CJSX
   <MightyComponent className="awesome-class" items={items} />
 
   # Good
-  <MightyComponent 
+  <MightyComponent className="awesome-class" items={items}>
+    [.. content ..]
+  </MightyComponent>
+
+  # Good
+  <MightyComponent
       className="awesome-class"
       items={items}
       anotherProperty={wayTooLong}
       andAnother={wayTooLong} />
 
+  # Good
+  <MightyComponent
+      className="awesome-class"
+      items={items}
+      anotherProperty={wayTooLong}
+      andAnother={wayTooLong}>
+    [.. content ..]
+  </MightyComponent>
+
   # Bad
   <MightyComponent className="awesome-class" items={items} anotherProperty={wayTooLong} andAnother={wayTooLong} />
-  
+
+  # Bad
+  <MightyComponent className="awesome-class" items={items} anotherProperty={wayTooLong} andAnother={wayTooLong} >
+    [.. content ..]
+  </MightyComponent>
+
   # Bad
   <MightyComponent className="awesome-class"
                    items={items}
                    anotherProperty={wayTooLong}
                    andAnother={wayTooLong} />
-  
-  # Bad  
-  <MightyComponent className="awesome-class" 
-                   items={items} 
+
+  # Bad
+  <MightyComponent className="awesome-class"
+                   items={items}
   />
-  
-  # Bad  
-  <MightyComponent 
-      className="awesome-class" 
-      items={items} 
+
+  # Bad
+  <MightyComponent
+      className="awesome-class"
+      items={items}
   />
   ```
 
@@ -198,10 +217,10 @@ Define methods on the component instead of inlining them.
   # Good
   handleClick: ->
     # implementation
-    
+
   render: ->
     <a onClick={@handleClick} />
-  
+
   # Bad
   render: ->
     <a onClick={=> #implementation} />
@@ -216,11 +235,11 @@ Advanced usage, methods with arguments: Since Coffeescript will call the method 
   render: ->
     <a onClick={@handleClick('first')} />
     <a onClick={@handleClick('second')} />
-  
+
   # Bad
   handleClick: (button_name) =>
     @setState lastButtonClicked: button_name
-  
+
   render: ->
     <a onClick={-> @handleClick('first')} />
     <a onClick={-> @handleClick('second')} />
@@ -232,7 +251,7 @@ Use double quotes instead of single quotes when writing CJSX elements:
   # Good
   render: ->
     <a className="link" href="/page" />
-  
+
   # Bad
   render: ->
     <a className='link' href='/page' />
