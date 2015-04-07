@@ -268,3 +268,28 @@ Use double quotes instead of single quotes when writing CJSX elements:
 ```
 
 It's fine to use single quotes on non-CJSX elements
+
+## Usage of method factories for handlers
+Often times in CJSX/CoffeeScript you're in need of methods that return methods. We call these methods factories. To be clear about the purpose of the method, it is required to always add the `Factory` postfix to these method names.
+
+The first arrow should always be a -> (for all methods on a component React binds the current component to `@`), but the second one can vary based on the context you need. If you need to call @ in your method, please make sure to use a fat (=>) arrow. Otherwise a -> would suffice.
+Use a method with the postfix `Factory`, use the appropriate arrow.
+
+```Coffee
+  renderItems: ->
+    for element in @props.elements
+      <a className={element.url()} onClick={@togglePopoverFactory(element)} />
+
+  # Good
+  togglePopoverFactory: (element) -> =>
+    @setState popover: element
+
+  # Good
+  togglePopoverFactory: (element) -> ->
+    element.toggleVisibility()
+
+  # Bad
+  togglePopover: (element) -> =>
+    element.toggleVisibility()
+```
+
