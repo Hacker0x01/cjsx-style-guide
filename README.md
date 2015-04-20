@@ -257,7 +257,7 @@ Advanced usage, methods with arguments: Since Coffeescript will call the method 
 ## Usage of quotes in CJSX elements
 Use double quotes instead of single quotes when writing CJSX elements:
 
-  ```Coffee
+```Coffee
   # Good
   render: ->
     <a className="link" href="/page" />
@@ -293,3 +293,29 @@ Use a method with the postfix `Factory`, use the appropriate arrow.
     element.toggleVisibility()
 ```
 
+## Component properties
+Simple properties (strings, booleans, numbers and variables) do not need curly braces. Only using curly braces for complex properties makes it easy to spot complexity.
+
+```Coffee
+# Good
+exampleTitle = "Mighty component title"
+
+<MightyComponent
+    className="awesome-class#{id}"
+    title=exampleTitle
+    length=100
+    enabled=true
+    selected={id == selectedId}
+    items={[item1, item2, item3]}
+    onClick={handleClickFactory(id)}/>
+
+# Bad
+<MightyComponent
+    className={"awesome-class#{id}"}
+    title={exampleTitle}
+    length={100}
+    enabled={true}
+    selected={id == selectedId}
+    items={[item1, item2, item3]}
+    onClick={handleClickFactory(id)}/>
+```
