@@ -294,7 +294,7 @@ Use a method with the postfix `Factory`, use the appropriate arrow.
 ```
 
 ## Component properties
-Simple properties (strings, booleans, numbers and variables) do not need curly braces. Only using curly braces for complex properties makes it easy to spot complexity.
+Simple properties (strings, booleans, numbers) do not need curly braces. Only use curly braces for complex properties like variables, comparisons, arrays and function calls.
 
 ```Coffee
 # Good
@@ -302,7 +302,7 @@ exampleTitle = "Mighty component title"
 
 <MightyComponent
     className="awesome-class#{id}"
-    title=exampleTitle
+    title={exampleTitle}
     length=100
     enabled=true
     selected={id == selectedId}
