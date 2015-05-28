@@ -307,15 +307,15 @@ exampleTitle = "Mighty component title"
     enabled=true
     selected={id == selectedId}
     items={[item1, item2, item3]}
-    onClick={handleClickFactory(id)}/>
+    onClick={handleClickFactory(id)} />
 
 # Bad
 <MightyComponent
     className={"awesome-class#{id}"}
-    title={exampleTitle}
+    title=exampleTitle
     length={100}
     enabled={true}
     selected={id == selectedId}
-    items={[item1, item2, item3]}
-    onClick={handleClickFactory(id)}/>
+    items=[item1, item2, item3]
+    onClick=handleClickFactory(id) />
 ```
