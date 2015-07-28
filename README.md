@@ -4,12 +4,19 @@ CJSX Style Guide
 A Style Guide for writing clean and readable CJSX
 
 ## Table of Contents
+* [Naming](#naming)
 * [Source Code Layout](#source-code-layout)
 * [Complex renders](#complex-renders)
 * [Significant whitespace](#significant-whitespace)
 * [Don't inline methods](#dont-inline-methods)
 * [Usage of method factories for handlers](#usage-of-method-factories-for-handlers)
 * [Usage of quotes in CJSX elements](#usage-of-quotes-in-cjsx-elements)
+
+## Naming
+
+In general, use `functionNamesLikeThis`, `variableNamesLikeThis`, `ClassNamesLikeThis`, `EnumNamesLikeThis`, `methodNamesLikeThis`, `CONSTANT_VALUES_LIKE_THIS`, `foo.namespaceNamesLikeThis.bar` and `file_names_like_this.js`.
+
+The one exception is for attribute names coming from the server or being sent to the server. These may be snake_case or whatever the server prefers. These should however be converted to camelCase as quickly as possible after receiving them to keep things as consistent as possible.
 
 ## Source Code Layout
 
