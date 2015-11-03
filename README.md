@@ -60,7 +60,7 @@ A Style Guide for writing clean and readable CJSX
   ```
 
 * <a name="space-at-end"></a>
-  If an element utilizes a self-closing tag, it must have a space character before the '/>'.  Additionally, the '/>' should always go on the same line as the last attribute in the tag.
+  If an element utilizes a self-closing tag, it must have a space character before the `/>` characters.  Additionally, the `/>` should always go on the same line as the last attribute in the tag.
 <sup>[[link]](#space-at-end)]</sup>
   
   ```Coffee
