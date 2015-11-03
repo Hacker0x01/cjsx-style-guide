@@ -14,7 +14,7 @@ A Style Guide for writing clean and readable CJSX
 ## Source Code Layout
 
 * <a name="one-line"></a>
-  Elements can span on one line as long as they fit.
+  An element can span on one line as long as it fits.  If it does not fit, each attribute must appear on its own line below the tag, indented one level.
 <sup>[[link](#one-line)]</sup>
 
   ```Coffee
@@ -42,8 +42,6 @@ A Style Guide for writing clean and readable CJSX
     [.. content ..]
   </MightyComponent>
 
-  # Bad
-  <MightyComponent className="awesome-class"/>
 
   # Bad
   <MightyComponent className="awesome-class" items={items} anotherProperty={wayTooLong} andAnother={wayTooLong} />
@@ -58,6 +56,27 @@ A Style Guide for writing clean and readable CJSX
                    items={items}
                    anotherProperty={wayTooLong}
                    andAnother={wayTooLong} />
+
+  ```
+
+* <a name="space-at-end"></a>
+  If an element utilizes a self-closing tag, it must have a space character before the '/>'.  Additionally, the '/>' should always go on the same line as the last attribute in the tag.
+<sup>[[link]](#space-at-end)]</sup>
+  
+  ```Coffee
+  # Good
+  <MightyComponent className="awesome-class" items={items} />
+
+  # Good
+  <MightyComponent
+      className="awesome-class"
+      items={items}
+      anotherProperty={wayTooLong}
+      andAnother={wayTooLong} />
+
+
+  # Bad
+  <MightyComponent className="awesome-class"/>
 
   # Bad
   <MightyComponent
@@ -76,9 +95,10 @@ A Style Guide for writing clean and readable CJSX
       className="awesome-class"
       items={items}
   />
+
   ```
 
-  **NOTE**: When an element spans over multiple lines, the tags should all be aligned horizontally, like they are in the last example.
+
 
 ## Complex renders
 * <a name="prefix-with-render"></a>
