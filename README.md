@@ -3,6 +3,11 @@ CJSX Style Guide
 
 A Style Guide for writing clean and readable CJSX
 
+## This repository is no longer maintained.
+
+Since we're no longer using CJSX in our codebase, we're no longer contributing to this repo.
+If you'd like to make this repository your own, please let us know. We'll be happy to transfer it to a new maintainer!
+
 ## Table of Contents
 * [Source Code Layout](#source-code-layout)
 * [Complex renders](#complex-renders)
